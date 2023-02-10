@@ -2,6 +2,7 @@ import Head from "next/head";
 import { NextPageContext } from "next";
 import Link from 'next/link';
 import { Post } from "./types";
+import app, { firebaseConfig } from "@/configs/firebaseApp";
 
 interface Props {
   posts: Array<Post>;
@@ -13,8 +14,8 @@ export default function Users({ posts }: Props) {
       <Head>
         <title>users</title>
       </Head>
-      <ul>
-        {posts.map((d) => (
+      <ul data-testid="Posts-list">
+        {posts?.map((d) => (
           <li key={d.id}>
             <Link href={`/posts/${d.id}`}>{d.title}</Link>
           </li>
@@ -25,6 +26,8 @@ export default function Users({ posts }: Props) {
 }
 
 export async function getServerSideProps(context: NextPageContext) {
+  // console.log(firebaseConfig);
+
   const dataFetch = async () => {
     const data = await (
       await fetch("https://jsonplaceholder.typicode.com/posts")

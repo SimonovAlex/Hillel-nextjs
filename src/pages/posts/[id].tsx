@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function Id({ post }: Props) {
-  console.log('post', post)
+  // console.log('post', post)
 
   return (
     <div>

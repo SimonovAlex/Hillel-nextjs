@@ -1,19 +1,22 @@
 import Link from "next/link";
+import { Button, Stack } from "@chakra-ui/react";
 
 export default function NavBar() {
   return (
     <>
-      <ul style={{display: "flex", gap: "1rem"}}>
-        <li>
-          <Link href={"/users"}><h3 style={{color: "blue"}}>users</h3></Link>
-        </li>
-        <li>
-          <Link href={"/posts"}><h3 style={{color: "blue"}}>posts</h3></Link>
-        </li>
-        <li>
-          <Link href={"/todos"}><h3 style={{color: "blue"}}>todos</h3></Link>
-        </li>
-      </ul>
+      <Stack direction="row">
+        <Link href={"/users"}>
+          <Button variant="link" color="customBlue.light">users</Button>
+        </Link>
+
+        <Link href={"/posts"}>
+          <Button variant="link" color="customBlue.dark">posts</Button>
+        </Link>
+
+        <Link href={"/todos"}>
+          <Button variant="link">todos</Button>
+        </Link>
+      </Stack>
     </>
   );
 }

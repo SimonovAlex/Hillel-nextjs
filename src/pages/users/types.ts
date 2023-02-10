@@ -27,3 +27,15 @@ interface Geo {
     website: string;
     company: Company;
 }
+
+type CustomAdd = Pick<User, "address">
+
+
+interface Pagination<T> {
+    entities: Array<T>,
+    page: number
+}
+
+
+
+export type UsersPagination = Pagination<User>
