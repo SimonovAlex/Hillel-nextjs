@@ -37,7 +37,7 @@ export default function Users() {
       <Head>
         <title>users</title>
       </Head>
-      <ul>
+      <ul data-testid="users-list">
         {data.map((d) => (
           <li key={d.id}><Link href={`/users/${d.id}`}>{d.name}</Link></li>
         ))}

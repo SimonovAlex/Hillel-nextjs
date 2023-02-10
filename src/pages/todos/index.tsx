@@ -8,6 +8,8 @@ interface Props {
 }
 
 export default function Users({ todos }: Props) {
+  console.log('envs', process.env.NEXT_PUBLIC_DEVELOPMENT_ENV_VARIABLE);
+  
   return (
     <>
       <Head>

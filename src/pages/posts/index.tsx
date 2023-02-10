@@ -14,8 +14,8 @@ export default function Users({ posts }: Props) {
       <Head>
         <title>users</title>
       </Head>
-      <ul>
-        {posts.map((d) => (
+      <ul data-testid="Posts-list">
+        {posts?.map((d) => (
           <li key={d.id}>
             <Link href={`/posts/${d.id}`}>{d.title}</Link>
           </li>
@@ -26,7 +26,7 @@ export default function Users({ posts }: Props) {
 }
 
 export async function getServerSideProps(context: NextPageContext) {
-  console.log(firebaseConfig);
+  // console.log(firebaseConfig);
 
   const dataFetch = async () => {
     const data = await (
